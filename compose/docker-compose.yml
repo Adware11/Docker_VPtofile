@@ -6,10 +6,6 @@ services:
       - "3306:3306"
     volumes:
       - /var/lib/mysql
-    environment:
-      - MYSQL_USER=admin
-      - MYSQL_PASSWORD=admin123
-      - MYSQL_DATABASE=accounts
   vprocache01: 
     image: adware11/memcached:V1
     ports:
