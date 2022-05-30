@@ -1,0 +1,33 @@
+version: '3'
+services:
+  vprodb:
+    image: adware11/mysql:V1
+    ports:
+      - "3306:3306"
+    volumes:
+      - /var/lib/mysql
+    environment:
+      - MYSQL_USER=admin
+      - MYSQL_PASSWORD=admin123
+      - MYSQL_DATABASE=accounts
+  vprocache01: 
+    image: adware11/memcached:V1
+    ports:
+      - "11211:11211"
+  vpromq01: 
+    image: adware11/rabbitmq:V1
+    ports:
+      - "5672:5672"
+    environment:
+      - RABBITMQ_DEFAULT_USER test
+      - RABBITMQ_DEFAULT_PASS test
+  vproapp:
+    image: adware11/tomcat:V1
+    ports:
+      - "8080:8080"
+    volumes:
+      - /usr/local/tomcat/webapps
+  vproweb:
+    image: adware11/nginx:V1
+    ports:
+      - "80:80"
