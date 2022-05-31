@@ -5,7 +5,7 @@ services:
     ports:
       - "3306:3306"
     volumes:
-      - /var/lib/mysql
+      -vprodbdata:/var/lib/mysql
   vprocache01: 
     image: adware11/memcached:V1
     ports:
@@ -22,8 +22,11 @@ services:
     ports:
       - "8080:8080"
     volumes:
-      - /usr/local/tomcat/webapps
+      - vproappdata:/usr/local/tomcat/webapps
   vproweb:
     image: adware11/nginx:V1
     ports:
       - "80:80"
+volumes:
+  vprodbdata: {}
+  vproappdata: {}
