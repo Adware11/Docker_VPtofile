@@ -1,4 +1,4 @@
-# Docker_VPtofile Контейнерезация
+# Контейнеризация проекта VProfile
 
 ## Dockerfile - Контейнеризация проекта VProfile с помощью Dockerfile
 - MySQL
